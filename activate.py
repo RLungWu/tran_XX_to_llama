@@ -25,7 +25,7 @@ def main():
     
     prompt = "Who are you?"
     inputs = tokenizer(prompt, return_tensors = "pt")
-    generate_ids = model.generate(inputs.input_ids, max_length = 50)
+    generate_ids = model.generate(inputs.input_ids, max_new_tokens = 50)
     output = tokenizer.decode(generate_ids[0], skip_special_tokens = True)
     
     print(output)
